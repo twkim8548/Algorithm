@@ -1,4 +1,4 @@
-package com.taewoong.baekjoon.bronze;
+package com.taewoong.baekjoon.implementation;
 
 import java.io.*;
 import java.util.StringTokenizer;
