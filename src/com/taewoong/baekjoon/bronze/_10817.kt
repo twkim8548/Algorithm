@@ -1,4 +1,4 @@
-package com.taewoong.baekjoon.implementation
+package com.taewoong.baekjoon.bronze
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
@@ -12,16 +12,17 @@ fun main() {
 
     val token = StringTokenizer(br.readLine())
 
-    var array = ArrayList<String>()
+    val array = ArrayList<Int>()
 
-    while (token.hasMoreTokens()) {
-        array.add(token.nextToken().toString())
+    repeat(3) {
+        array.add(token.nextToken().toInt())
     }
 
-    bw.write("${array.size}")
+    array.sort()
+
+    bw.write("${array[1]}\n")
     bw.flush()
     bw.close()
 
     br.close()
-
 }
