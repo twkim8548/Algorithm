@@ -17,7 +17,7 @@ fun main() {
     val c = token.nextToken().toDouble()
     val n = token.nextToken().toDouble()
 
-    val answer= ceil((r/n)).toInt() * ceil((c/n)).toInt()
+    val answer= ceil((r/n)).toBigDecimal().toBigInteger() * ceil((c/n)).toBigDecimal().toBigInteger()
 
     bw.write("$answer")
     bw.flush()
