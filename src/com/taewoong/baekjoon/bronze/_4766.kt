@@ -9,18 +9,21 @@ fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
 
-    val array = ArrayList<Int>()
+    var preTemp = -11.0
+    var nowTemp: Double
+    while (true) {
+        nowTemp = br.readLine().toDouble()
+        if (nowTemp == 999.0) {
+            break
+        }
 
-    repeat(9) {
-        array.add(br.readLine().toInt())
+        if (preTemp != -11.0) {
+            bw.write("${String.format("%.2f", nowTemp - preTemp)}\n")
+        }
+        preTemp = nowTemp
     }
-
-    val a = array.maxOrNull()
-    val b = array.indexOf(array.maxOrNull()) + 1
-    bw.write("${a}\n${b}")
 
     bw.flush()
     bw.close()
     br.close()
-
 }
