@@ -15,8 +15,8 @@ fun main() {
         array.add(br.readLine().toInt())
     }
 
-    val a = array.maxOrNull()
-    val b = array.indexOf(array.maxOrNull()) + 1
+    val a = array.max()
+    val b = array.indexOf(array.max()) + 1
     bw.write("${a}\n${b}")
 
     bw.flush()
