@@ -25,7 +25,7 @@ fun main() {
     array[2] = (0-x).absoluteValue
     array[3] = (0-y).absoluteValue
 
-    bw.write("${array.minOrNull()}")
+    bw.write("${array.min()}")
     bw.flush()
 
     bw.close()
