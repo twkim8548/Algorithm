@@ -10,12 +10,12 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
 
     val array = arrayOf(br.readLine(), br.readLine(), br.readLine(), br.readLine(), br.readLine())
-    for (i in 0 until array.maxOf { it.length }) {
-        repeat(5) { index ->
-            if (array[index].length > i)
-                bw.write("${array[index][i]}")
-        }
-    }
+//    for (i in 0 until array.maxof{ it.length }) {
+//        repeat(5) { index ->
+//            if (array[index].length > i)
+//                bw.write("${array[index][i]}")
+//        }
+//    }
 
     bw.flush()
     bw.close()

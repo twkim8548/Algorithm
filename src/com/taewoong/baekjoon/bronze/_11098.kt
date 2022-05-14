@@ -22,11 +22,11 @@ fun main() {
             map[name] = money
         }
 
-        map.forEach {
-            if (it.value == map.maxOf { it.value }) {
-                bw.write("${it.key}\n")
-            }
-        }
+//        map.forEach {
+//            if (it.value == map.maxOf { it.value }) {
+//                bw.write("${it.key}\n")
+//            }
+//        }
     }
 
     bw.flush()
