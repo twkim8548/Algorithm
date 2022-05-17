@@ -4,19 +4,16 @@ import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
+import java.math.BigInteger
 
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
 
-    val array = arrayOf(br.readLine(), br.readLine(), br.readLine(), br.readLine(), br.readLine())
-//    for (i in 0 until array.maxof{ it.length }) {
-//        repeat(5) { index ->
-//            if (array[index].length > i)
-//                bw.write("${array[index][i]}")
-//        }
-//    }
+    val n = br.readLine().toInt()
 
+
+    bw.write("${BigInteger.valueOf(1).shiftLeft(n)}")
     bw.flush()
     bw.close()
     br.close()
