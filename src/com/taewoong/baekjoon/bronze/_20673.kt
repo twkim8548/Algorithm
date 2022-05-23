@@ -1,5 +1,3 @@
-package com.taewoong.baekjoon.bronze
-
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
@@ -12,18 +10,14 @@ fun main() {
     val p = br.readLine().toInt()
     val q = br.readLine().toInt()
 
-    if (q <= 10) {
-        if (p <= 50) {
-            bw.write("White")
-        } else {
-            bw.write("Yellow")
-        }
-    } else if (q >= 30) {
+    if (p <= 50 && q <= 10) {
+        bw.write("White")
+    } else if (q > 30) {
         bw.write("Red")
     } else {
         bw.write("Yellow")
     }
-
+    
     bw.flush()
     bw.close()
 
