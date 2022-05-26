@@ -16,16 +16,18 @@ fun main() {
             break
         }
         val answer = br.readLine()
+
+
         if (answer == "right on") {
             var isLie = false
             map.forEach {
-                if (it.key > number) {
-                    if (it.value != "too high") {
+                if (it.value == "too high") {
+                    if (it.key <= number) {
                         isLie = true
                     }
-                } else if (it.key < number) {
-                    if (it.value != "too low") {
-                        isLie = false
+                } else if (it.value == "too low") {
+                    if (it.key >= number) {
+                        isLie = true
                     }
                 }
             }
