@@ -20,12 +20,12 @@ fun main() {
 
     repeat(h) {
         val cost = br.readLine().toInt()
-        var isStay = true
+        var isStay = false
         val money = br.readLine().split(" ")
 
         money.forEach {
-            if (it.toInt() < n) {
-                isStay = false
+            if (it.toInt() >= n) {
+                isStay = true
             }
 
         }
@@ -36,10 +36,10 @@ fun main() {
     }
     if (array.isEmpty()) {
         bw.write("stay home")
-    } else if (array.min()!!.toInt() > b) {
+    } else if (array.minOrNull()!!.toInt() > b) {
         bw.write("stay home")
     } else {
-        bw.write("${array.min()}")
+        bw.write("${array.minOrNull()}")
     }
     bw.flush()
     bw.close()
