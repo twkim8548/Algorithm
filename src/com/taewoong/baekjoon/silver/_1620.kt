@@ -5,7 +5,6 @@ import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.util.*
-import kotlin.collections.ArrayList
 
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
@@ -15,14 +14,22 @@ fun main() {
 
     val n = token.nextToken().toInt()
     val m = token.nextToken().toInt()
-    val array = Array<String>(n) {br.readLine()}
+    val array = mutableListOf<String>()
+    val map = mutableMapOf<String, Int>()
+    var cnt = 1
+    repeat(n) {
+        val name = br.readLine()
+        array.add(name)
+        map[name] = cnt
+        cnt++
+    }
 
     repeat(m) {
         val question = br.readLine()
         if (chkNum(question)) {
             bw.write("${array[question.toInt() - 1]}\n")
         } else {
-            bw.write("${array.indexOf(question) + 1}\n")
+            bw.write("${map[question]}\n")
 
         }
     }
