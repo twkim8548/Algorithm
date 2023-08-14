@@ -13,7 +13,7 @@ fun main() {
     var bCnt = 0
     vote.forEach {
         if (it =='A') aCnt++
-        else bCnt++
+        else bCnt++ 
     }
 
     if (aCnt > bCnt) bw.write("A")
