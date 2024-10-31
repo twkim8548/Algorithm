@@ -5,16 +5,16 @@ input = sys.stdin.readline
 n, m, r = map(int, input().split())
 arr = [[] for _ in range(n + 1)]
 visited = [0] * (n + 1)
-cnt = 1
+cnt = 0
 
 
 def dfs(v, r, visited):
     global cnt
+    cnt += 1
     visited[r] = cnt
 
     for x in v[r]:
         if visited[x] == 0:
-            cnt += 1
             dfs(v, x, visited)
 
 
