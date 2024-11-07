@@ -2,14 +2,20 @@ import sys
 
 input = sys.stdin.readline
 
-s = set()
-for _ in range(int(input())):
-    name, el = input().split()
-    if el == 'enter':
-        s.add(name)
-    else:
-        if name in s:
-            s.remove(name)
 
-for name in sorted(s, reverse=True):
-    print(name)
+n = int(input())
+
+arr = dict()
+
+for i in range(n):
+    name, status = input().split()
+    if status == "enter":
+        arr[name] = True
+    else:
+        if name in arr:
+            arr[name] = False
+
+
+for name in sorted(arr, reverse=True):
+    if arr[name]:
+        print(name)
