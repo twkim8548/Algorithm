@@ -3,16 +3,21 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
+ans = 0
 
-dp = [-1] * (n + 8)
+if n == 1 or n == 3:
+    print(-1)
 
-dp[2] = 1
-dp[4] = 2
-dp[5] = 1
-dp[6] = 3
-dp[7] = 2
-dp[8] = 4
+else:
+    while n > 0:
+        if n % 5 == 0:
+            ans += n // 5
+            n = 0
+        elif (n - 5) % 2 == 0:
+            n -= 5
+            ans += 1
+        elif (n - 2) % 5 == 0 or (n - 2) % 2 == 0 :
+            n -= 2
+            ans += 1
 
-for i in range(9, n+1):
-    dp[i] = min(dp[i-2], dp[i-5]) + 1
-print(dp[n])
+    print(ans)
